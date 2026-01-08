@@ -1,0 +1,126 @@
+/*
+ * Service Finder - Layout 6 Custom Styles
+ * Style 6: Orange/Dark Premium Theme
+ */
+
+body { font-family: 'Poppins', sans-serif; font-size: 14px; line-height: 1.6; color: #666; background-color: #fff; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; font-weight: 600; color: #222; }
+a { color: #ff6600; transition: all 0.3s ease; }
+a:hover { color: #e55d00; }
+.btn { border-radius: 5px; padding: 12px 28px; font-weight: 600; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+.btn-primary { background-color: #ff6600; border-color: #ff6600; color: #fff; }
+.btn-primary:hover { background-color: #e55d00; border-color: #e55d00; }
+.btn-secondary { background-color: #343a40; border-color: #343a40; color: #fff; }
+
+#header-part { position: relative; z-index: 999; }
+/* No top bar for Layout 6 - cleaner look */
+.top-bar { display: none; }
+
+.main-bar { background-color: #1a1a2e; padding: 20px 0; }
+.logo-header { float: left; }
+.logo-header img { max-height: 50px; }
+.header-nav { float: right; }
+.navbar-nav > li > a { color: #fff; padding: 15px 20px; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+.navbar-nav > li > a:hover, .navbar-nav > li.active > a { color: #ff6600; }
+.navbar-nav .dropdown-menu { background-color: #1a1a2e; border: 1px solid #333; border-radius: 0; }
+.navbar-nav .dropdown-menu li a { color: #aaa; }
+.navbar-nav .dropdown-menu li a:hover { background-color: #252542; color: #ff6600; }
+.navbar-toggle { display: none; float: right; background-color: #ff6600; border: none; border-radius: 0; padding: 12px 15px; }
+.navbar-toggle .icon-bar { background-color: #fff; width: 25px; height: 3px; display: block; margin: 5px 0; }
+
+.sf-banner-section { background-color: #0f0f1a; }
+.sf-slider-item { height: 650px; background-size: cover; background-position: center; display: flex; align-items: center; position: relative; }
+.sf-slider-item::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(26,26,46,0.9) 0%, rgba(15,15,26,0.8) 100%); }
+.sf-banner-content { text-align: left; color: #fff; max-width: 600px; position: relative; z-index: 1; }
+.sf-banner-title { font-size: 52px; font-weight: 700; margin-bottom: 20px; color: #fff; line-height: 1.2; }
+.sf-banner-title span { color: #ff6600; }
+.sf-banner-text { font-size: 18px; margin-bottom: 40px; color: #aaa; }
+.sf-search-form { background-color: #fff; padding: 25px; border-radius: 0; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+.sf-search-form .form-control { height: 55px; border-radius: 0; border: 2px solid #eee; }
+.sf-search-form .form-control:focus { border-color: #ff6600; }
+.sf-search-form .btn { border-radius: 0; }
+
+.sf-caty-section { padding: 100px 0; background-color: #fff; }
+.sf-section-title { margin-bottom: 60px; }
+.sf-section-title h2 { font-size: 40px; margin-bottom: 15px; }
+.sf-section-title p { font-size: 16px; color: #888; }
+.sf-category-box { background-color: #fff; border: none; border-radius: 0; padding: 40px 25px; text-align: center; margin-bottom: 30px; box-shadow: 0 5px 30px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+.sf-category-box:hover { box-shadow: 0 15px 50px rgba(255,102,0,0.2); transform: translateY(-10px); }
+.sf-category-icon { width: 90px; height: 90px; background-color: #f8f8f8; border-radius: 0; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; }
+.sf-category-icon i { font-size: 36px; color: #ff6600; }
+.sf-category-box:hover .sf-category-icon { background-color: #ff6600; }
+.sf-category-box:hover .sf-category-icon i { color: #fff; }
+.sf-category-title { font-size: 20px; margin-bottom: 10px; font-weight: 600; }
+
+.sf-how-it-works { padding: 100px 0; background-color: #1a1a2e; }
+.sf-how-it-works .sf-section-title h2, .sf-how-it-works .sf-section-title p { color: #fff; }
+.sf-work-box { padding: 30px; text-align: center; }
+.sf-work-icon { position: relative; width: 110px; height: 110px; background-color: #ff6600; border-radius: 0; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; }
+.sf-work-icon i { font-size: 40px; color: #fff; }
+.sf-work-number { position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; background-color: #fff; border-radius: 0; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #ff6600; font-size: 18px; }
+.sf-work-box h4 { font-size: 22px; margin-bottom: 15px; color: #fff; }
+.sf-work-box p { color: #aaa; }
+
+.sf-featured-providers { padding: 100px 0; }
+.sf-provider-box { background-color: #fff; border-radius: 0; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); margin-bottom: 30px; }
+.sf-provider-media { position: relative; height: 220px; overflow: hidden; }
+.sf-provider-media img { width: 100%; height: 100%; object-fit: cover; }
+.sf-featured-label { position: absolute; top: 0; left: 0; background-color: #ff6600; color: #fff; padding: 8px 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.sf-provider-info { padding: 25px; }
+.sf-provider-name { font-size: 20px; }
+.sf-provider-name a:hover { color: #ff6600; }
+.sf-provider-rating i { color: #ff6600; }
+.sf-provider-location i { color: #ff6600; }
+
+.sf-testimonials-section { padding: 100px 0; background-color: #1a1a2e; }
+.sf-testimonials-section::before { display: none; }
+.sf-testimonials-section .sf-section-title h2, .sf-testimonials-section .sf-section-title p { color: #fff; }
+.sf-testimonial-item { background-color: #252542; border-radius: 0; padding: 40px; margin: 10px; }
+.sf-testimonial-content p { color: #aaa; }
+.sf-testimonial-author h5 { color: #fff; }
+
+.sf-cta-section { padding: 100px 0; background-color: #f8f8f8; }
+.sf-cta-box { background-color: #fff; border-radius: 0; padding: 50px; display: flex; align-items: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+.sf-cta-icon { width: 90px; height: 90px; background-color: #ff6600; border-radius: 0; display: flex; align-items: center; justify-content: center; margin-right: 30px; }
+.sf-cta-icon i { font-size: 36px; color: #fff; }
+.sf-cta-content h3 { font-size: 24px; }
+.sf-cta-provider .sf-cta-icon { background-color: #1a1a2e; }
+
+.sf-blog-section { padding: 100px 0; }
+.sf-blog-box { background-color: #fff; border-radius: 0; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); margin-bottom: 30px; }
+.sf-blog-media { height: 220px; overflow: hidden; }
+.sf-blog-media img { width: 100%; height: 100%; object-fit: cover; }
+.sf-blog-info { padding: 25px; }
+.sf-blog-meta i { color: #ff6600; }
+.sf-blog-title { font-size: 20px; }
+.sf-blog-title a:hover { color: #ff6600; }
+.sf-blog-read-more { color: #ff6600; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+#footer { background-color: #0f0f1a; color: #888; }
+.footer-top { padding: 80px 0 40px; }
+.widget-title { color: #fff; font-size: 20px; border-bottom: 3px solid #ff6600; padding-bottom: 15px; }
+.widget_about .social-icons li a { background-color: #1a1a2e; }
+.widget_about .social-icons li a:hover { background-color: #ff6600; }
+.widget_links ul li a:hover { color: #ff6600; }
+.widget_contact ul li i { color: #ff6600; }
+.footer-bottom { background-color: #0a0a12; padding: 25px 0; }
+.footer-bottom p { color: #666; }
+.footer-bottom-links li a:hover { color: #ff6600; }
+
+.sf-scroll-top { background-color: #ff6600; border-radius: 0; }
+.sf-scroll-top:hover { background-color: #e55d00; }
+
+@media (max-width: 991px) {
+    .navbar-toggle { display: block; }
+    .header-nav { position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background-color: #1a1a2e; padding: 20px; transition: right 0.3s ease; z-index: 1000; }
+    .header-nav.in { right: 0; }
+    .navbar-nav { float: none; }
+    .navbar-nav > li { float: none; }
+    .sf-banner-content { text-align: center; max-width: 100%; }
+    .sf-cta-box { flex-direction: column; text-align: center; }
+    .sf-cta-icon { margin-right: 0; margin-bottom: 20px; }
+}
+
+@media (max-width: 767px) {
+    .sf-banner-title { font-size: 36px; }
+}
