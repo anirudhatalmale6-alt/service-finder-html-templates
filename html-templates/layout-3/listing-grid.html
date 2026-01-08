@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Service Providers - Service Finder</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/logo_icon.png" type="image/x-icon">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome CDN for reliable icon loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout-3.css">
+    <link rel="stylesheet" href="css/theme-style.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="sf-theme-style-3">
+
+<div class="page-wraper">
+
+    <!-- Header Start -->
+    <header id="header-part" class="mostion clearfix header-style1 sf-header-inner">
+
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <ul class="list-unstyled e-p-bx">
+                            <li><a href="mailto:info@servicefinder.com"><i class="fa fa-envelope"></i> info@servicefinder.com</a></li>
+                            <li><a href="tel:+1234567890"><i class="fa fa-phone"></i> +1 234 567 890</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <ul class="login-bx list-inline fs-customer-status">
+                            <li><i class="fa fa-user"></i><a href="login.html">Login</a></li>
+                            <li><i class="fa fa-plus"></i><a href="signup.html">Sign up</a></li>
+                        </ul>
+                        <ul class="social-bx list-inline">
+                            <li><a href="#" class="fa fa-facebook" target="_blank"></a></li>
+                            <li><a href="#" class="fa fa-twitter" target="_blank"></a></li>
+                            <li><a href="#" class="fa fa-instagram" target="_blank"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="curve-box"></div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="main-bar clearfix">
+            <div class="container">
+                <div class="logo-header mostion">
+                    <div class="logo-header-inr">
+                        <a href="index.html">
+                            <img src="images/logo.png" alt="Service Finder" title="Service Finder">
+                        </a>
+                    </div>
+                </div>
+
+                <button data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggle collapsed nav-top-slide-btn">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="header-nav navbar-collapse collapse">
+                    <ul class="nav navbar-nav" id="primary-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="services.html">Our Services</a></li>
+                                <li><a href="pricing.html">Pricing Plans</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listings <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="listing-grid.html">Listing Grid</a></li>
+                                <li><a href="listing-list.html">Listing List</a></li>
+                                <li><a href="listing-detail.html">Listing Detail</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-grid.html">Blog Grid</a></li>
+                                <li><a href="blog-detail.html">Blog Detail</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="body-overlay" style="display: none;"></div>
+            </div>
+        </div>
+
+    </header>
+    <!-- Header End -->
+
+    <!-- Page Banner -->
+    <div class="sf-page-banner" style="background-image: url('images/titlebg.jpg');">
+        <div class="container">
+            <div class="sf-banner-content">
+                <h1>Service Providers</h1>
+                <nav class="sf-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Listings</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Page Banner End -->
+
+    <!-- Listing Section -->
+    <section class="sf-listing-section">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-md-3">
+                    <div class="sf-sidebar">
+                        <div class="sf-sidebar-widget">
+                            <h4 class="sf-widget-title">Search</h4>
+                            <div class="sf-search-widget">
+                                <input type="text" class="form-control" placeholder="Search providers...">
+                                <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="sf-sidebar-widget">
+                            <h4 class="sf-widget-title">Categories</h4>
+                            <ul class="sf-category-list">
+                                <li><a href="#">Plumber <span>(120)</span></a></li>
+                                <li><a href="#">Electrician <span>(85)</span></a></li>
+                                <li><a href="#">Painter <span>(65)</span></a></li>
+                                <li><a href="#">Carpenter <span>(90)</span></a></li>
+                                <li><a href="#">Cleaner <span>(150)</span></a></li>
+                                <li><a href="#">Auto Service <span>(75)</span></a></li>
+                                <li><a href="#">Gardener <span>(45)</span></a></li>
+                                <li><a href="#">Movers <span>(55)</span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sf-sidebar-widget">
+                            <h4 class="sf-widget-title">Location</h4>
+                            <select class="form-control">
+                                <option value="">All Locations</option>
+                                <option value="new-york">New York</option>
+                                <option value="los-angeles">Los Angeles</option>
+                                <option value="chicago">Chicago</option>
+                                <option value="houston">Houston</option>
+                                <option value="miami">Miami</option>
+                            </select>
+                        </div>
+
+                        <div class="sf-sidebar-widget">
+                            <h4 class="sf-widget-title">Rating</h4>
+                            <ul class="sf-rating-filter">
+                                <li>
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="sf-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                        <span>5 Stars</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="sf-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                        <span>4+ Stars</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="sf-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                        <span>3+ Stars</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sf-sidebar-widget">
+                            <h4 class="sf-widget-title">Price Range</h4>
+                            <div class="sf-price-range">
+                                <input type="range" class="form-control-range" min="0" max="500" value="250">
+                                <div class="sf-price-labels">
+                                    <span>$0</span>
+                                    <span>$500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Grid -->
+                <div class="col-md-9">
+                    <div class="sf-listing-header">
+                        <div class="sf-result-count">
+                            <span>Showing 1-9 of 120 results</span>
+                        </div>
+                        <div class="sf-sort-options">
+                            <select class="form-control">
+                                <option value="newest">Newest First</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row sf-provider-grid">
+                        <!-- Provider Card 1 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="sf-provider-card">
+                                <div class="sf-provider-media">
+                                    <img src="images/pro-pic.jpg" alt="Provider">
+                                    <span class="sf-featured-badge">Featured</span>
+                                    <span class="sf-verified-badge"><i class="fa fa-check"></i></span>
+                                </div>
+                                <div class="sf-provider-info">
+                                    <h4><a href="listing-detail.html">John Smith</a></h4>
+                                    <span class="sf-category">Plumber</span>
+                                    <div class="sf-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <span>4.5 (28 reviews)</span>
+                                    </div>
+                                    <p class="sf-location"><i class="fa fa-map-marker"></i> New York, NY</p>
+                                    <div class="sf-price">Starting from <strong>$45/hr</strong></div>
+                                    <a href="listing-detail.html" class="btn btn-primary btn-block">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Provider Card 2 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="sf-provider-card">
+                                <div class="sf-provider-media">
+                                    <img src="images/pro-pic.jpg" alt="Provider">
+                                    <span class="sf-verified-badge"><i class="fa fa-check"></i></span>
+                                </div>
+                                <div class="sf-provider-info">
+                                    <h4><a href="listing-detail.html">Sarah Johnson</a></h4>
+                                    <span class="sf-category">House Cleaner</span>
+                                    <div class="sf-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <span>5.0 (52 reviews)</span>
+                                    </div>
+                                    <p class="sf-location"><i class="fa fa-map-marker"></i> Los Angeles, CA</p>
+                                    <div class="sf-price">Starting from <strong>$35/hr</strong></div>
+                                    <a href="listing-detail.html" class="btn btn-primary btn-block">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Provider Card 3 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="sf-provider-card">
+                                <div class="sf-provider-media">
+                                    <img src="images/pro-pic.jpg" alt="Provider">
+                                    <span class="sf-featured-badge">Featured</span>
+                                    <span class="sf-verified-badge"><i class="fa fa-check"></i></span>
+                                </div>
+                                <div class="sf-provider-info">
+                                    <h4><a href="listing-detail.html">Mike Davis</a></h4>
+                                    <span class="sf-category">Electrician</span>
+                                    <div class="sf-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <span>4.0 (18 reviews)</span>
+                                    </div>
+                                    <p class="sf-location"><i class="fa fa-map-marker"></i> Chicago, IL</p>
+                                    <div class="sf-price">Starting from <strong>$55/hr</strong></div>
+                                    <a href="listing-detail.html" class="btn btn-primary btn-block">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Provider Card 4 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="sf-provider-card">
+                                <div class="sf-provider-media">
+                                    <img src="images/pro-pic.jpg" alt="Provider">
+                                </div>
+                                <div class="sf-provider-info">
+                                    <h4><a href="listing-detail.html">Emily Brown</a></h4>
+                                    <span class="sf-category">Painter</span>
+                                    <div class="sf-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <span>4.3 (15 reviews)</span>
+                                    </div>
+                                    <p class="sf-location"><i class="fa fa-map-marker"></i> Houston, TX</p>
+                                    <div class="sf-price">Starting from <strong>$40/hr</strong></div>
+                                    <a href="listing-detail.html" class="btn btn-primary btn-block">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Provider Card 5 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="sf-provider-card">
+                                <div class="sf-provider-media">
+                                    <img src="images/pro-pic.jpg" alt="Provider">
+                                    <span class="sf-verified-badge"><i class="fa fa-check"></i></span>
+                                </div>
+                                <div class="sf-provider-info">
+                                    <h4><a href="listing-detail.html">Robert Wilson</a></h4>
+                                    <span class="sf-category">Carpenter</span>
+                                    <div class="sf-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <span>4.8 (35 reviews)</span>
+                                    </div>
+                                    <p class="sf-location"><i class="fa fa-map-marker"></i> Miami, FL</p>
+                                    <div class="sf-price">Starting from <strong>$50/hr</strong></div>
+                                    <a href="listing-detail.html" class="btn btn-primary btn-block">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Provider Card 6 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="sf-provider-card">
+                                <div class="sf-provider-media">
+                                    <img src="images/pro-pic.jpg" alt="Provider">
+                                    <span class="sf-featured-badge">Featured</span>
+                                </div>
+                                <div class="sf-provider-info">
+                                    <h4><a href="listing-detail.html">Lisa Anderson</a></h4>
+                                    <span class="sf-category">Auto Mechanic</span>
+                                    <div class="sf-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <span>4.2 (22 reviews)</span>
+                                    </div>
+                                    <p class="sf-location"><i class="fa fa-map-marker"></i> Denver, CO</p>
+                                    <div class="sf-price">Starting from <strong>$60/hr</strong></div>
+                                    <a href="listing-detail.html" class="btn btn-primary btn-block">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav class="sf-pagination">
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Listing Section End -->
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-top sf-top-footer-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="widget widget_about">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="images/logo2.png" alt="Service Finder"></a>
+                            </div>
+                            <p>Service Finder is your one-stop platform to find and book the best local service providers in your area.</p>
+                            <ul class="social-icons">
+                                <li><a href="#" class="fa fa-facebook"></a></li>
+                                <li><a href="#" class="fa fa-twitter"></a></li>
+                                <li><a href="#" class="fa fa-linkedin"></a></li>
+                                <li><a href="#" class="fa fa-instagram"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="widget widget_links">
+                            <h4 class="widget-title">Quick Links</h4>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="services.html">Our Services</a></li>
+                                <li><a href="pricing.html">Pricing Plans</a></li>
+                                <li><a href="blog-grid.html">Blog</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="widget widget_links">
+                            <h4 class="widget-title">For Providers</h4>
+                            <ul>
+                                <li><a href="signup.html">Register</a></li>
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="widget widget_contact">
+                            <h4 class="widget-title">Contact Info</h4>
+                            <ul>
+                                <li><i class="fa fa-map-marker"></i> 123 Main Street, New York, NY 10001</li>
+                                <li><i class="fa fa-phone"></i> +1 234 567 890</li>
+                                <li><i class="fa fa-envelope"></i> info@servicefinder.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <p>&copy; 2026 Service Finder. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">
+                        <ul class="footer-bottom-links">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+</div>
+
+<!-- Scroll to Top Button -->
+<button class="sf-scroll-top"><i class="fa fa-angle-up"></i></button>
+
+<!-- JavaScript Files -->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+$(document).ready(function() {
+    // Scroll to Top
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 300) {
+            $('.sf-scroll-top').addClass('show');
+        } else {
+            $('.sf-scroll-top').removeClass('show');
+        }
+    });
+
+    $('.sf-scroll-top').click(function() {
+        $('html, body').animate({scrollTop: 0}, 800);
+        return false;
+    });
+
+    // Dropdown on Hover
+    $('.dropdown').hover(
+        function() { $(this).addClass('open'); },
+        function() { $(this).removeClass('open'); }
+    );
+});
+</script>
+
+<style>
+/* Page Banner Styles */
+.sf-page-banner {
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    position: relative;
+    text-align: center;
+}
+
+.sf-page-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.sf-page-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.sf-page-banner h1 {
+    color: #fff;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.sf-breadcrumb {
+    color: #fff;
+}
+
+.sf-breadcrumb a {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.sf-breadcrumb a:hover {
+    opacity: 1;
+}
+
+.sf-breadcrumb span {
+    margin: 0 10px;
+}
+
+/* Listing Section */
+.sf-listing-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+/* Sidebar */
+.sf-sidebar {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 20px;
+}
+
+.sf-sidebar-widget {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.sf-sidebar-widget:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.sf-widget-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.sf-search-widget {
+    position: relative;
+}
+
+.sf-search-widget input {
+    padding-right: 50px;
+    height: 45px;
+}
+
+.sf-search-widget button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 45px;
+    border-radius: 0 5px 5px 0;
+}
+
+.sf-category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sf-category-list li {
+    margin-bottom: 10px;
+}
+
+.sf-category-list li a {
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sf-category-list li a:hover {
+    color: #1767ef;
+}
+
+.sf-category-list li a span {
+    color: #999;
+}
+
+.sf-rating-filter {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sf-rating-filter li {
+    margin-bottom: 10px;
+}
+
+.sf-rating-filter label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.sf-rating-filter input {
+    margin-right: 10px;
+}
+
+.sf-rating-filter .sf-stars {
+    margin-right: 10px;
+    color: #ffb600;
+}
+
+.sf-price-range {
+    padding: 10px 0;
+}
+
+.sf-price-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #888;
+    font-size: 13px;
+}
+
+/* Listing Header */
+.sf-listing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.sf-result-count span {
+    color: #666;
+}
+
+.sf-sort-options select {
+    width: 200px;
+    height: 40px;
+}
+
+/* Provider Cards */
+.sf-provider-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.sf-provider-card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+
+.sf-provider-media {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.sf-provider-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sf-featured-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ffb600;
+    color: #222;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.sf-verified-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.sf-provider-info {
+    padding: 20px;
+}
+
+.sf-provider-info h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.sf-provider-info h4 a {
+    color: #222;
+}
+
+.sf-provider-info h4 a:hover {
+    color: #1767ef;
+}
+
+.sf-provider-info .sf-category {
+    color: #1767ef;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sf-provider-info .sf-rating {
+    margin-bottom: 10px;
+}
+
+.sf-provider-info .sf-rating i {
+    color: #ffb600;
+    font-size: 14px;
+}
+
+.sf-provider-info .sf-rating span {
+    color: #888;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.sf-provider-info .sf-location {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.sf-provider-info .sf-location i {
+    color: #1767ef;
+    margin-right: 5px;
+}
+
+.sf-provider-info .sf-price {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.sf-provider-info .sf-price strong {
+    color: #1767ef;
+    font-size: 16px;
+}
+
+/* Pagination */
+.sf-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sf-pagination .pagination {
+    margin: 0;
+}
+
+.sf-pagination .pagination li a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 3px;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.sf-pagination .pagination li.active a,
+.sf-pagination .pagination li a:hover {
+    background-color: #1767ef;
+    border-color: #1767ef;
+    color: #fff;
+}
+
+.sf-pagination .pagination li.disabled a {
+    color: #ccc;
+}
+
+@media (max-width: 991px) {
+    .sf-sidebar {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .sf-listing-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sf-sort-options select {
+        width: 100%;
+    }
+}
+</style>
+
+</body>
+</html>
