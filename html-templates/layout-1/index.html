@@ -4,652 +4,909 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Service Finder - Home</title>
+    <title>Service Finder - Demo5 Style</title>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/logo_icon.png" type="image/x-icon">
-
-    <!-- CSS Files -->
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Urbanist', sans-serif; color: #011c2d; font-size: 16px; line-height: 1.8; }
+        a { text-decoration: none; }
 
-        /* Top Bar */
-        .top-bar { background: #1a1a2e; padding: 8px 0; color: #fff; font-size: 14px; }
-        .top-bar a { color: #fff; text-decoration: none; }
-        .top-bar .e-p-bx { list-style: none; margin: 0; padding: 0; display: flex; }
-        .top-bar .e-p-bx li { margin-right: 20px; }
-        .top-bar .e-p-bx li i { margin-right: 8px; color: #ffb600; }
-        .top-bar .login-bx { list-style: none; margin: 0; padding: 0; display: flex; justify-content: flex-end; }
-        .top-bar .login-bx li { margin-left: 15px; }
-        .top-bar .login-bx li i { margin-right: 5px; color: #ffb600; }
+        /* ============ TOP BAR ============ */
+        .sf-top-bar {
+            background: #1a1a2e;
+            padding: 10px 0;
+            color: #fff;
+            font-size: 14px;
+        }
+        .sf-top-bar a { color: #fff; }
+        .sf-top-bar i { color: #ffb600; margin-right: 8px; }
+        .sf-top-left { float: left; }
+        .sf-top-left span { margin-right: 25px; }
+        .sf-top-right { float: right; }
+        .sf-top-right a { margin-left: 20px; }
 
-        /* Header */
-        .main-header { background: #fff; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo-header img { max-height: 45px; }
-        .header-nav .nav { list-style: none; margin: 0; padding: 0; display: flex; }
-        .header-nav .nav > li { margin-left: 30px; }
-        .header-nav .nav > li > a { color: #011c2d; font-weight: 600; font-size: 15px; text-decoration: none; }
-        .header-nav .nav > li > a:hover { color: #ffb600; }
-        .btn-post-task { background: #ffb600; color: #000; padding: 10px 25px; border-radius: 5px; font-weight: 700; text-decoration: none; }
-        .btn-post-task:hover { background: #e5a400; color: #000; }
+        /* ============ HEADER ============ */
+        .sf-header {
+            background: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        .sf-logo img { height: 40px; }
+        .sf-nav { float: right; margin-top: 8px; }
+        .sf-nav ul { list-style: none; margin: 0; padding: 0; }
+        .sf-nav ul li { display: inline-block; margin-left: 30px; }
+        .sf-nav ul li a { color: #011c2d; font-weight: 600; font-size: 15px; }
+        .sf-nav ul li a:hover { color: #ffb600; }
+        .sf-post-btn {
+            background: #ffb600;
+            color: #000 !important;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 700;
+        }
 
-        /* Banner Section - Demo5 Style with Floating Images */
-        .sf-bnr88-wrap { background: #eceaff; min-height: 600px; position: relative; overflow: hidden; padding: 60px 0; }
-        .sf-bnr88-content { position: relative; z-index: 10; text-align: center; padding: 40px 0; }
-        .sf-bnr88-rating { display: inline-flex; align-items: center; background: #fff; padding: 8px 20px; border-radius: 50px; margin-bottom: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-        .sf-bnr88-rating .stars { color: #ffb600; margin-right: 10px; }
-        .sf-bnr88-rating span { font-weight: 600; color: #333; }
-        .sf-bnr88-title { font-size: 48px; font-weight: 800; color: #0b2a37; margin-bottom: 20px; line-height: 1.2; }
-        .sf-bnr88-title span { color: #ffb600; }
-        .sf-bnr88-text { font-size: 18px; color: #555; margin-bottom: 30px; }
+        /* ============ BANNER - DEMO5 STYLE ============ */
+        .sf-banner-demo5 {
+            background-color: #eceaff;
+            min-height: 650px;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+
+        /* Floating Images Container */
+        .sf-floating-left,
+        .sf-floating-right {
+            position: absolute;
+            top: 0;
+            width: 300px;
+            height: 100%;
+            z-index: 1;
+        }
+        .sf-floating-left { left: 0; }
+        .sf-floating-right { right: 0; }
+
+        .sf-float-img {
+            position: absolute;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .sf-float-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Left side images */
+        .sf-floating-left .sf-float-img:nth-child(1) { width: 100px; height: 100px; top: 60px; left: 30px; }
+        .sf-floating-left .sf-float-img:nth-child(2) { width: 120px; height: 120px; top: 200px; left: 100px; }
+        .sf-floating-left .sf-float-img:nth-child(3) { width: 90px; height: 90px; top: 380px; left: 40px; }
+        .sf-floating-left .sf-float-img:nth-child(4) { width: 80px; height: 80px; top: 100px; left: 180px; }
+        .sf-floating-left .sf-float-img:nth-child(5) { width: 110px; height: 110px; top: 300px; left: 160px; }
+        .sf-floating-left .sf-float-img:nth-child(6) { width: 70px; height: 70px; top: 480px; left: 120px; }
+
+        /* Right side images */
+        .sf-floating-right .sf-float-img:nth-child(1) { width: 100px; height: 100px; top: 60px; right: 30px; }
+        .sf-floating-right .sf-float-img:nth-child(2) { width: 120px; height: 120px; top: 200px; right: 100px; }
+        .sf-floating-right .sf-float-img:nth-child(3) { width: 90px; height: 90px; top: 380px; right: 40px; }
+        .sf-floating-right .sf-float-img:nth-child(4) { width: 80px; height: 80px; top: 100px; right: 180px; }
+        .sf-floating-right .sf-float-img:nth-child(5) { width: 110px; height: 110px; top: 300px; right: 160px; }
+        .sf-floating-right .sf-float-img:nth-child(6) { width: 70px; height: 70px; top: 480px; right: 120px; }
+
+        /* Banner Content */
+        .sf-banner-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .sf-rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #fff;
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .sf-rating-badge .stars { color: #ffb600; margin-right: 10px; font-size: 14px; }
+        .sf-rating-badge span { font-weight: 600; color: #333; font-size: 14px; }
+
+        .sf-banner-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #0b2a37;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .sf-banner-title span { color: #ffb600; }
+
+        .sf-banner-text {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 35px;
+        }
 
         /* Search Form */
-        .sf-search-wrap { background: #fff; border-radius: 15px; padding: 25px 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); max-width: 900px; margin: 0 auto; }
-        .sf-search-row { display: flex; flex-wrap: wrap; align-items: center; margin: 0 -10px; }
-        .sf-search-col { padding: 0 10px; flex: 1; min-width: 200px; }
-        .sf-search-col.btn-col { flex: 0 0 auto; }
-        .sf-search-field { position: relative; }
-        .sf-search-field label { display: block; font-size: 12px; font-weight: 600; color: #888; margin-bottom: 5px; text-transform: uppercase; }
-        .sf-search-field select, .sf-search-field input { width: 100%; height: 45px; border: 1px solid #e5e7eb; border-radius: 8px; padding: 0 15px; font-size: 15px; background: #f9fafb; }
-        .sf-search-field select:focus, .sf-search-field input:focus { border-color: #ffb600; outline: none; }
-        .sf-search-btn { background: #ffb600; border: none; color: #000; padding: 15px 35px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; height: 45px; display: flex; align-items: center; }
-        .sf-search-btn i { margin-right: 8px; }
+        .sf-search-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            text-align: left;
+        }
+
+        .sf-form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        .sf-form-col {
+            padding: 0 10px;
+            flex: 1;
+            min-width: 180px;
+            margin-bottom: 15px;
+        }
+
+        .sf-form-col label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .sf-form-col select,
+        .sf-form-col input {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 0 15px;
+            font-size: 15px;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .sf-form-col select:focus,
+        .sf-form-col input:focus {
+            border-color: #ffb600;
+            outline: none;
+        }
+
+        .sf-search-btn {
+            background: #ffb600;
+            border: none;
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
         .sf-search-btn:hover { background: #e5a400; }
+        .sf-search-btn i { margin-right: 8px; }
 
-        /* Floating Images */
-        .sf-bnr88-left-part, .sf-bnr88-right-part { position: absolute; top: 0; width: 250px; height: 100%; }
-        .sf-bnr88-left-part { left: 0; }
-        .sf-bnr88-right-part { right: 0; }
-        .sf-bnr88-img { position: absolute; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        .sf-bnr88-img img { width: 100%; height: 100%; object-fit: cover; }
-        .sf-bnr88-left-part .sf-bnr88-img:nth-child(1) { width: 120px; height: 120px; top: 50px; left: 20px; }
-        .sf-bnr88-left-part .sf-bnr88-img:nth-child(2) { width: 100px; height: 100px; top: 200px; left: 80px; }
-        .sf-bnr88-left-part .sf-bnr88-img:nth-child(3) { width: 140px; height: 140px; top: 350px; left: 30px; }
-        .sf-bnr88-right-part .sf-bnr88-img:nth-child(1) { width: 120px; height: 120px; top: 80px; right: 30px; }
-        .sf-bnr88-right-part .sf-bnr88-img:nth-child(2) { width: 100px; height: 100px; top: 230px; right: 70px; }
-        .sf-bnr88-right-part .sf-bnr88-img:nth-child(3) { width: 130px; height: 130px; top: 380px; right: 20px; }
+        /* ============ CATEGORIES ============ */
+        .sf-section { padding: 80px 0; }
+        .sf-section-head { text-align: center; margin-bottom: 50px; }
+        .sf-section-head h2 { font-size: 36px; font-weight: 800; color: #0b2a37; margin-bottom: 10px; }
+        .sf-section-head p { font-size: 16px; color: #666; }
 
-        /* Categories Section */
-        .sf-caty-section { padding: 80px 0; background: #fff; }
-        .section-head { text-align: center; margin-bottom: 50px; }
-        .section-head h2 { font-size: 36px; font-weight: 800; color: #0b2a37; margin-bottom: 15px; }
-        .section-head p { font-size: 16px; color: #666; }
-        .sf-caty-box { text-align: center; padding: 30px 20px; border: 1px solid #eee; border-radius: 15px; transition: all 0.3s; margin-bottom: 30px; background: #fff; }
-        .sf-caty-box:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.1); transform: translateY(-5px); }
-        .sf-caty-icon { width: 80px; height: 80px; background: #f5f7fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
-        .sf-caty-icon i { font-size: 32px; color: #002585; }
-        .sf-caty-box h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #0b2a37; }
-        .sf-caty-box span { font-size: 14px; color: #888; }
+        .sf-cat-box {
+            text-align: center;
+            padding: 30px 20px;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            background: #fff;
+            transition: all 0.3s;
+        }
+        .sf-cat-box:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .sf-cat-icon {
+            width: 80px;
+            height: 80px;
+            background: #f0f4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .sf-cat-icon i { font-size: 32px; color: #002585; }
+        .sf-cat-box h4 { font-size: 18px; font-weight: 700; color: #0b2a37; margin-bottom: 5px; }
+        .sf-cat-box span { font-size: 14px; color: #888; }
 
-        /* How It Works */
-        .sf-howit-section { padding: 80px 0; background: #f9fafc; }
-        .sf-howit-box { text-align: center; padding: 30px; }
-        .sf-howit-icon { width: 100px; height: 100px; background: #002585; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; position: relative; }
-        .sf-howit-icon i { font-size: 36px; color: #fff; }
-        .sf-howit-num { position: absolute; top: -5px; right: -5px; width: 30px; height: 30px; background: #ffb600; border-radius: 50%; font-size: 14px; font-weight: 700; color: #000; display: flex; align-items: center; justify-content: center; }
-        .sf-howit-box h4 { font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #0b2a37; }
-        .sf-howit-box p { font-size: 15px; color: #666; margin: 0; }
+        /* ============ HOW IT WORKS ============ */
+        .sf-section-gray { background: #f8f9fc; }
 
-        /* Featured Providers */
-        .sf-providers-section { padding: 80px 0; background: #fff; }
-        .sf-provider-box { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.08); margin-bottom: 30px; transition: all 0.3s; }
-        .sf-provider-box:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
-        .sf-provider-media { position: relative; height: 200px; overflow: hidden; }
-        .sf-provider-media img { width: 100%; height: 100%; object-fit: cover; }
-        .sf-featured-label { position: absolute; top: 15px; left: 15px; background: #002585; color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .sf-step-box { text-align: center; padding: 20px; }
+        .sf-step-icon {
+            width: 100px;
+            height: 100px;
+            background: #002585;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            position: relative;
+        }
+        .sf-step-icon i { font-size: 36px; color: #fff; }
+        .sf-step-num {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 30px;
+            height: 30px;
+            background: #ffb600;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sf-step-box h4 { font-size: 20px; font-weight: 700; color: #0b2a37; margin-bottom: 10px; }
+        .sf-step-box p { font-size: 15px; color: #666; margin: 0; }
+
+        /* ============ PROVIDERS ============ */
+        .sf-provider-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        .sf-provider-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .sf-provider-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .sf-provider-img img { width: 100%; height: 100%; object-fit: cover; }
+        .sf-featured-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #002585;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
         .sf-provider-info { padding: 20px; }
-        .sf-provider-name { font-size: 18px; font-weight: 700; margin-bottom: 5px; }
-        .sf-provider-name a { color: #0b2a37; text-decoration: none; }
-        .sf-provider-category { font-size: 14px; color: #ffb600; font-weight: 600; margin-bottom: 10px; display: block; }
+        .sf-provider-info h4 { font-size: 18px; font-weight: 700; margin-bottom: 5px; }
+        .sf-provider-info h4 a { color: #0b2a37; }
+        .sf-provider-cat { font-size: 14px; color: #ffb600; font-weight: 600; display: block; margin-bottom: 10px; }
         .sf-provider-rating { margin-bottom: 10px; }
         .sf-provider-rating i { color: #ffb600; font-size: 14px; }
         .sf-provider-rating span { color: #666; font-size: 14px; margin-left: 5px; }
-        .sf-provider-location { font-size: 14px; color: #666; margin-bottom: 15px; }
-        .sf-provider-location i { color: #002585; margin-right: 5px; }
-        .btn-view-profile { background: #002585; color: #fff; padding: 10px 20px; border-radius: 5px; font-weight: 600; text-decoration: none; display: inline-block; font-size: 14px; }
-        .btn-view-profile:hover { background: #001a6b; color: #fff; }
+        .sf-provider-loc { font-size: 14px; color: #666; margin-bottom: 15px; }
+        .sf-provider-loc i { color: #002585; margin-right: 5px; }
+        .sf-btn-profile {
+            background: #002585;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-block;
+        }
+        .sf-btn-profile:hover { background: #001a6b; color: #fff; }
 
-        /* Testimonials */
-        .sf-testimonial-section { padding: 80px 0; background: #002585; color: #fff; }
-        .sf-testimonial-section .section-head h2, .sf-testimonial-section .section-head p { color: #fff; }
-        .sf-testimonial-item { text-align: center; padding: 30px; }
-        .sf-testimonial-content p { font-size: 20px; line-height: 1.8; margin-bottom: 30px; font-style: italic; }
-        .sf-testimonial-author img { width: 80px; height: 80px; border-radius: 50%; margin-bottom: 15px; border: 3px solid #ffb600; }
-        .sf-testimonial-author h5 { font-size: 18px; font-weight: 700; margin-bottom: 5px; color: #fff; }
-        .sf-testimonial-author span { font-size: 14px; opacity: 0.8; }
+        /* ============ TESTIMONIALS ============ */
+        .sf-section-blue { background: #002585; color: #fff; }
+        .sf-section-blue .sf-section-head h2,
+        .sf-section-blue .sf-section-head p { color: #fff; }
 
-        /* CTA Section */
-        .sf-cta-section { padding: 80px 0; background: #f9fafc; }
-        .sf-cta-box { background: #fff; padding: 40px; border-radius: 15px; display: flex; align-items: center; box-shadow: 0 5px 25px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        .sf-cta-icon { width: 70px; height: 70px; background: #002585; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0; }
+        .sf-testimonial { text-align: center; padding: 30px; }
+        .sf-testimonial p {
+            font-size: 20px;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        .sf-testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #ffb600;
+            margin-bottom: 15px;
+        }
+        .sf-testimonial h5 { font-size: 18px; font-weight: 700; margin-bottom: 5px; }
+        .sf-testimonial span { font-size: 14px; opacity: 0.8; }
+
+        /* ============ CTA ============ */
+        .sf-cta-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .sf-cta-icon {
+            width: 70px;
+            height: 70px;
+            background: #002585;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
         .sf-cta-icon i { font-size: 28px; color: #fff; }
-        .sf-cta-content h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; color: #0b2a37; }
+        .sf-cta-content h3 { font-size: 22px; font-weight: 700; color: #0b2a37; margin-bottom: 10px; }
         .sf-cta-content p { font-size: 15px; color: #666; margin-bottom: 15px; }
-        .btn-cta { padding: 12px 25px; border-radius: 5px; font-weight: 600; text-decoration: none; display: inline-block; }
-        .btn-cta.primary { background: #002585; color: #fff; }
-        .btn-cta.secondary { background: #ffb600; color: #000; }
-        .btn-cta:hover { opacity: 0.9; }
+        .sf-btn-cta {
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .sf-btn-cta.primary { background: #002585; color: #fff; }
+        .sf-btn-cta.secondary { background: #ffb600; color: #000; }
 
-        /* Blog Section */
-        .sf-blog-section { padding: 80px 0; background: #fff; }
-        .sf-blog-box { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.08); margin-bottom: 30px; }
-        .sf-blog-media { height: 200px; overflow: hidden; }
-        .sf-blog-media img { width: 100%; height: 100%; object-fit: cover; }
-        .sf-blog-info { padding: 25px; }
+        /* ============ BLOG ============ */
+        .sf-blog-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        .sf-blog-img { height: 200px; overflow: hidden; }
+        .sf-blog-img img { width: 100%; height: 100%; object-fit: cover; }
+        .sf-blog-content { padding: 25px; }
         .sf-blog-meta { margin-bottom: 15px; }
         .sf-blog-meta span { font-size: 13px; color: #888; margin-right: 15px; }
-        .sf-blog-meta span i { margin-right: 5px; color: #002585; }
-        .sf-blog-title { font-size: 18px; font-weight: 700; margin-bottom: 15px; line-height: 1.4; }
-        .sf-blog-title a { color: #0b2a37; text-decoration: none; }
-        .sf-blog-title a:hover { color: #002585; }
-        .sf-blog-box p { font-size: 14px; color: #666; margin-bottom: 15px; }
-        .sf-blog-link { color: #002585; font-weight: 600; text-decoration: none; }
+        .sf-blog-meta i { margin-right: 5px; color: #002585; }
+        .sf-blog-content h4 { font-size: 18px; font-weight: 700; margin-bottom: 15px; line-height: 1.4; }
+        .sf-blog-content h4 a { color: #0b2a37; }
+        .sf-blog-content h4 a:hover { color: #002585; }
+        .sf-blog-content p { font-size: 14px; color: #666; margin-bottom: 15px; }
+        .sf-blog-link { color: #002585; font-weight: 600; }
         .sf-blog-link:hover { color: #ffb600; }
 
-        /* Footer */
-        .site-footer { background: #1a1a2e; color: #fff; }
-        .footer-top { padding: 60px 0 40px; }
-        .footer-logo img { max-height: 45px; margin-bottom: 20px; }
-        .footer-widget p { color: #aaa; font-size: 14px; }
-        .footer-widget-title { font-size: 18px; font-weight: 700; margin-bottom: 25px; color: #fff; }
-        .footer-widget ul { list-style: none; padding: 0; margin: 0; }
-        .footer-widget ul li { margin-bottom: 12px; }
-        .footer-widget ul li a { color: #aaa; text-decoration: none; font-size: 14px; }
-        .footer-widget ul li a:hover { color: #ffb600; }
-        .footer-widget ul li i { margin-right: 10px; color: #ffb600; }
-        .social-icons { list-style: none; padding: 0; margin: 20px 0 0; display: flex; }
-        .social-icons li { margin-right: 10px; }
-        .social-icons li a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; }
-        .social-icons li a:hover { background: #ffb600; }
-        .footer-bottom { background: #151525; padding: 20px 0; }
-        .footer-bottom p { margin: 0; color: #888; font-size: 14px; }
+        /* ============ FOOTER ============ */
+        .sf-footer { background: #1a1a2e; color: #fff; }
+        .sf-footer-top { padding: 60px 0 40px; }
+        .sf-footer-logo img { height: 40px; margin-bottom: 20px; }
+        .sf-footer-widget p { color: #aaa; font-size: 14px; }
+        .sf-footer-widget h4 { font-size: 18px; font-weight: 700; margin-bottom: 25px; }
+        .sf-footer-widget ul { list-style: none; padding: 0; margin: 0; }
+        .sf-footer-widget ul li { margin-bottom: 12px; }
+        .sf-footer-widget ul li a { color: #aaa; font-size: 14px; }
+        .sf-footer-widget ul li a:hover { color: #ffb600; }
+        .sf-footer-widget ul li i { margin-right: 10px; color: #ffb600; }
+        .sf-social { list-style: none; padding: 0; margin: 20px 0 0; display: flex; }
+        .sf-social li { margin-right: 10px; }
+        .sf-social li a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .sf-social li a:hover { background: #ffb600; }
+        .sf-footer-bottom {
+            background: #151525;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .sf-footer-bottom p { margin: 0; color: #888; font-size: 14px; }
 
-        /* Responsive */
+        /* ============ RESPONSIVE ============ */
         @media (max-width: 991px) {
-            .sf-bnr88-title { font-size: 36px; }
-            .sf-bnr88-left-part, .sf-bnr88-right-part { display: none; }
+            .sf-banner-title { font-size: 36px; }
+            .sf-floating-left, .sf-floating-right { display: none; }
             .sf-cta-box { flex-direction: column; text-align: center; }
             .sf-cta-icon { margin-right: 0; margin-bottom: 20px; }
         }
         @media (max-width: 767px) {
-            .sf-bnr88-title { font-size: 28px; }
-            .sf-search-col { min-width: 100%; margin-bottom: 15px; }
+            .sf-banner-title { font-size: 28px; }
+            .sf-form-col { min-width: 100%; }
+            .sf-top-left, .sf-top-right { float: none; text-align: center; }
+            .sf-nav { display: none; }
         }
     </style>
 </head>
 <body>
 
-<div class="page-wrapper">
+<!-- TOP BAR -->
+<div class="sf-top-bar">
+    <div class="container">
+        <div class="sf-top-left">
+            <span><i class="fa fa-envelope"></i> info@servicefinder.com</span>
+            <span><i class="fa fa-phone"></i> +1 234 567 890</span>
+        </div>
+        <div class="sf-top-right">
+            <a href="#"><i class="fa fa-user"></i> Login</a>
+            <a href="#"><i class="fa fa-plus"></i> Sign up</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <ul class="e-p-bx">
-                        <li><a href="mailto:info@servicefinder.com"><i class="fa fa-envelope"></i> info@servicefinder.com</a></li>
-                        <li><a href="tel:+1234567890"><i class="fa fa-phone"></i> +1 234 567 890</a></li>
-                    </ul>
+<!-- HEADER -->
+<header class="sf-header">
+    <div class="container">
+        <div class="sf-logo">
+            <a href="index.html"><img src="images/logo.png" alt="Service Finder"></a>
+        </div>
+        <nav class="sf-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="listing-grid.html">Providers</a></li>
+                <li><a href="blog-grid.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="sf-post-btn">Post a Task</a></li>
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </div>
+</header>
+
+<!-- BANNER -->
+<section class="sf-banner-demo5">
+    <!-- Floating Images Left -->
+    <div class="sf-floating-left">
+        <div class="sf-float-img"><img src="images/pro-pic.jpg" alt=""></div>
+        <div class="sf-float-img"><img src="images/pictest.jpg" alt=""></div>
+        <div class="sf-float-img"><img src="images/pictest2.jpg" alt=""></div>
+        <div class="sf-float-img"><img src="images/pro-pic.jpg" alt=""></div>
+        <div class="sf-float-img"><img src="images/pictest.jpg" alt=""></div>
+        <div class="sf-float-img"><img src="images/pictest2.jpg" alt=""></div>
+    </div>
+
+    <!-- Banner Content -->
+    <div class="container">
+        <div class="sf-banner-content">
+            <div class="sf-rating-badge">
+                <span class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+                <span>4.9 Rating | 1 Million+ Happy Customers</span>
+            </div>
+
+            <h1 class="sf-banner-title">Find the Best <span>Service Providers</span> Near You</h1>
+            <p class="sf-banner-text">Hire experts and get your job done with verified professionals</p>
+
+            <!-- Search Form -->
+            <div class="sf-search-box">
+                <div class="sf-form-row">
+                    <div class="sf-form-col">
+                        <label>Category</label>
+                        <select>
+                            <option value="">Select Category</option>
+                            <option value="plumber">Plumber</option>
+                            <option value="electrician">Electrician</option>
+                            <option value="painter">Painter</option>
+                            <option value="carpenter">Carpenter</option>
+                            <option value="cleaner">Cleaner</option>
+                        </select>
+                    </div>
+                    <div class="sf-form-col">
+                        <label>Country</label>
+                        <select>
+                            <option value="">Select Country</option>
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="ca">Canada</option>
+                        </select>
+                    </div>
+                    <div class="sf-form-col">
+                        <label>City</label>
+                        <select>
+                            <option value="">Select City</option>
+                            <option value="ny">New York</option>
+                            <option value="la">Los Angeles</option>
+                            <option value="ch">Chicago</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                    <ul class="login-bx">
-                        <li><a href="login.html"><i class="fa fa-user"></i> Login</a></li>
-                        <li><a href="signup.html"><i class="fa fa-plus"></i> Sign up</a></li>
-                    </ul>
-                </div>
+                <button class="sf-search-btn"><i class="fa fa-search"></i> Search Now</button>
             </div>
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="main-header">
-        <div class="container">
-            <div class="row" style="display:flex; align-items:center; justify-content:space-between;">
-                <div class="logo-header">
-                    <a href="index.html"><img src="images/logo.png" alt="Service Finder"></a>
+    <!-- Floating Images Right -->
+    <div class="sf-floating-right">
+        <div class="sf-float-img"><img src="images/pictest2.jpg" alt=""></div>
+        <div class="sf-float-img"><img src="images/pro-pic.jpg" alt=""></div>
+        <div class="sf-float-img"><img src="images/pictest.jpg" alt=""></div>
+        <div class="sf-float-img"><img src="images/pictest2.jpg" alt=""></div>
+        <div class="sf-float-img"><img src="images/pro-pic.jpg" alt=""></div>
+        <div class="sf-float-img"><img src="images/pictest.jpg" alt=""></div>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="sf-section">
+    <div class="container">
+        <div class="sf-section-head">
+            <h2>Popular Categories</h2>
+            <p>Browse our most popular service categories</p>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="sf-cat-box">
+                    <div class="sf-cat-icon"><i class="fa fa-wrench"></i></div>
+                    <h4>Plumber</h4>
+                    <span>120+ Providers</span>
                 </div>
-                <div class="header-nav">
-                    <ul class="nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="listing-grid.html">Providers</a></li>
-                        <li><a href="blog-grid.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sf-cat-box">
+                    <div class="sf-cat-icon"><i class="fa fa-bolt"></i></div>
+                    <h4>Electrician</h4>
+                    <span>85+ Providers</span>
                 </div>
-                <div class="header-right">
-                    <a href="post-task.html" class="btn-post-task">Post a Task</a>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sf-cat-box">
+                    <div class="sf-cat-icon"><i class="fa fa-paint-brush"></i></div>
+                    <h4>Painter</h4>
+                    <span>65+ Providers</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sf-cat-box">
+                    <div class="sf-cat-icon"><i class="fa fa-gavel"></i></div>
+                    <h4>Carpenter</h4>
+                    <span>90+ Providers</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sf-cat-box">
+                    <div class="sf-cat-icon"><i class="fa fa-home"></i></div>
+                    <h4>Cleaner</h4>
+                    <span>150+ Providers</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sf-cat-box">
+                    <div class="sf-cat-icon"><i class="fa fa-car"></i></div>
+                    <h4>Auto Service</h4>
+                    <span>75+ Providers</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sf-cat-box">
+                    <div class="sf-cat-icon"><i class="fa fa-leaf"></i></div>
+                    <h4>Gardener</h4>
+                    <span>45+ Providers</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sf-cat-box">
+                    <div class="sf-cat-icon"><i class="fa fa-truck"></i></div>
+                    <h4>Movers</h4>
+                    <span>55+ Providers</span>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- Banner Section - Demo5 Style -->
-    <section class="sf-bnr88-wrap">
-        <!-- Floating Images Left -->
-        <div class="sf-bnr88-left-part">
-            <div class="sf-bnr88-img"><img src="images/pro-pic.jpg" alt="Provider"></div>
-            <div class="sf-bnr88-img"><img src="images/pictest.jpg" alt="Provider"></div>
-            <div class="sf-bnr88-img"><img src="images/pictest2.jpg" alt="Provider"></div>
+<!-- HOW IT WORKS -->
+<section class="sf-section sf-section-gray">
+    <div class="container">
+        <div class="sf-section-head">
+            <h2>How It Works</h2>
+            <p>Simple steps to find the best service providers</p>
         </div>
-
-        <!-- Banner Content -->
-        <div class="container">
-            <div class="sf-bnr88-content">
-                <div class="sf-bnr88-rating">
-                    <span class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
-                    <span>4.9 Rating | 1 Million+ Happy Customers</span>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="sf-step-box">
+                    <div class="sf-step-icon">
+                        <i class="fa fa-search"></i>
+                        <span class="sf-step-num">1</span>
+                    </div>
+                    <h4>Search</h4>
+                    <p>Search for the service you need in your area</p>
                 </div>
-                <h1 class="sf-bnr88-title">Find the Best <span>Service Providers</span> Near You</h1>
-                <p class="sf-bnr88-text">Hire experts and get your job done with verified professionals</p>
+            </div>
+            <div class="col-md-4">
+                <div class="sf-step-box">
+                    <div class="sf-step-icon">
+                        <i class="fa fa-users"></i>
+                        <span class="sf-step-num">2</span>
+                    </div>
+                    <h4>Compare</h4>
+                    <p>Compare providers based on ratings and reviews</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sf-step-box">
+                    <div class="sf-step-icon">
+                        <i class="fa fa-calendar-check-o"></i>
+                        <span class="sf-step-num">3</span>
+                    </div>
+                    <h4>Book</h4>
+                    <p>Book the service provider that fits your needs</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                <!-- Search Form -->
-                <div class="sf-search-wrap">
-                    <div class="sf-search-row">
-                        <div class="sf-search-col">
-                            <div class="sf-search-field">
-                                <label>Category</label>
-                                <select>
-                                    <option value="">Select Category</option>
-                                    <option value="plumber">Plumber</option>
-                                    <option value="electrician">Electrician</option>
-                                    <option value="painter">Painter</option>
-                                    <option value="carpenter">Carpenter</option>
-                                    <option value="cleaner">Cleaner</option>
-                                </select>
-                            </div>
+<!-- FEATURED PROVIDERS -->
+<section class="sf-section">
+    <div class="container">
+        <div class="sf-section-head">
+            <h2>Featured Service Providers</h2>
+            <p>Top rated professionals ready to serve you</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="sf-provider-card">
+                    <div class="sf-provider-img">
+                        <img src="images/pro-pic.jpg" alt="Provider">
+                        <span class="sf-featured-tag">Featured</span>
+                    </div>
+                    <div class="sf-provider-info">
+                        <h4><a href="#">John Smith</a></h4>
+                        <span class="sf-provider-cat">Plumber</span>
+                        <div class="sf-provider-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <span>(4.5)</span>
                         </div>
-                        <div class="sf-search-col">
-                            <div class="sf-search-field">
-                                <label>Country</label>
-                                <select>
-                                    <option value="">Select Country</option>
-                                    <option value="us">United States</option>
-                                    <option value="uk">United Kingdom</option>
-                                    <option value="ca">Canada</option>
-                                </select>
-                            </div>
+                        <p class="sf-provider-loc"><i class="fa fa-map-marker"></i> New York, NY</p>
+                        <a href="#" class="sf-btn-profile">View Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="sf-provider-card">
+                    <div class="sf-provider-img">
+                        <img src="images/pictest.jpg" alt="Provider">
+                        <span class="sf-featured-tag">Featured</span>
+                    </div>
+                    <div class="sf-provider-info">
+                        <h4><a href="#">Sarah Johnson</a></h4>
+                        <span class="sf-provider-cat">Cleaner</span>
+                        <div class="sf-provider-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <span>(5.0)</span>
                         </div>
-                        <div class="sf-search-col">
-                            <div class="sf-search-field">
-                                <label>City</label>
-                                <input type="text" placeholder="Enter City">
-                            </div>
+                        <p class="sf-provider-loc"><i class="fa fa-map-marker"></i> Los Angeles, CA</p>
+                        <a href="#" class="sf-btn-profile">View Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="sf-provider-card">
+                    <div class="sf-provider-img">
+                        <img src="images/pictest2.jpg" alt="Provider">
+                        <span class="sf-featured-tag">Featured</span>
+                    </div>
+                    <div class="sf-provider-info">
+                        <h4><a href="#">Mike Davis</a></h4>
+                        <span class="sf-provider-cat">Electrician</span>
+                        <div class="sf-provider-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <span>(4.0)</span>
                         </div>
-                        <div class="sf-search-col btn-col">
-                            <button class="sf-search-btn"><i class="fa fa-search"></i> Search Now</button>
-                        </div>
+                        <p class="sf-provider-loc"><i class="fa fa-map-marker"></i> Chicago, IL</p>
+                        <a href="#" class="sf-btn-profile">View Profile</a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Floating Images Right -->
-        <div class="sf-bnr88-right-part">
-            <div class="sf-bnr88-img"><img src="images/pictest3.jpg" alt="Provider"></div>
-            <div class="sf-bnr88-img"><img src="images/pro-pic.jpg" alt="Provider"></div>
-            <div class="sf-bnr88-img"><img src="images/pictest.jpg" alt="Provider"></div>
+        <div class="text-center" style="margin-top:30px;">
+            <a href="#" class="sf-btn-cta primary">View All Providers</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Categories Section -->
-    <section class="sf-caty-section">
-        <div class="container">
-            <div class="section-head">
-                <h2>Popular Categories</h2>
-                <p>Browse our most popular service categories</p>
+<!-- TESTIMONIALS -->
+<section class="sf-section sf-section-blue">
+    <div class="container">
+        <div class="sf-section-head">
+            <h2>What Our Customers Say</h2>
+            <p>Trusted by thousands of happy customers</p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sf-testimonial">
+                    <p>"Excellent service! Found a great plumber within minutes. The booking process was seamless and the provider arrived on time."</p>
+                    <img src="images/pictest.jpg" alt="Customer">
+                    <h5>Jane Doe</h5>
+                    <span>Homeowner</span>
+                </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="sf-section sf-section-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="sf-cta-box">
+                    <div class="sf-cta-icon"><i class="fa fa-search"></i></div>
+                    <div class="sf-cta-content">
+                        <h3>Are You Looking For Service?</h3>
+                        <p>Find the best professionals in your area with verified reviews.</p>
+                        <a href="#" class="sf-btn-cta primary">Find Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="sf-cta-box">
+                    <div class="sf-cta-icon"><i class="fa fa-briefcase"></i></div>
+                    <div class="sf-cta-content">
+                        <h3>Are You A Service Provider?</h3>
+                        <p>Join thousands of professionals and grow your business.</p>
+                        <a href="#" class="sf-btn-cta secondary">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG -->
+<section class="sf-section">
+    <div class="container">
+        <div class="sf-section-head">
+            <h2>Latest News & Articles</h2>
+            <p>Stay updated with tips and insights</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="sf-blog-card">
+                    <div class="sf-blog-img"><img src="images/blog1.jpg" alt="Blog"></div>
+                    <div class="sf-blog-content">
+                        <div class="sf-blog-meta">
+                            <span><i class="fa fa-calendar"></i> Jan 15, 2026</span>
+                            <span><i class="fa fa-user"></i> Admin</span>
+                        </div>
+                        <h4><a href="#">10 Tips for Choosing the Right Service Provider</a></h4>
+                        <p>Learn how to evaluate and choose the best service provider...</p>
+                        <a href="#" class="sf-blog-link">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="sf-blog-card">
+                    <div class="sf-blog-img"><img src="images/blog2.jpg" alt="Blog"></div>
+                    <div class="sf-blog-content">
+                        <div class="sf-blog-meta">
+                            <span><i class="fa fa-calendar"></i> Jan 12, 2026</span>
+                            <span><i class="fa fa-user"></i> Admin</span>
+                        </div>
+                        <h4><a href="#">How to Grow Your Service Business Online</a></h4>
+                        <p>Essential strategies for service providers to attract customers...</p>
+                        <a href="#" class="sf-blog-link">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="sf-blog-card">
+                    <div class="sf-blog-img"><img src="images/blog3.jpg" alt="Blog"></div>
+                    <div class="sf-blog-content">
+                        <div class="sf-blog-meta">
+                            <span><i class="fa fa-calendar"></i> Jan 10, 2026</span>
+                            <span><i class="fa fa-user"></i> Admin</span>
+                        </div>
+                        <h4><a href="#">The Importance of Customer Reviews</a></h4>
+                        <p>Why reviews matter and how they help customers and providers...</p>
+                        <a href="#" class="sf-blog-link">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="sf-footer">
+    <div class="sf-footer-top">
+        <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <div class="sf-caty-box">
-                        <div class="sf-caty-icon"><i class="fa fa-wrench"></i></div>
-                        <h4>Plumber</h4>
-                        <span>120+ Providers</span>
+                    <div class="sf-footer-widget">
+                        <div class="sf-footer-logo"><img src="images/logo2.png" alt="Service Finder"></div>
+                        <p>Service Finder is your one-stop platform to find and book the best local service providers.</p>
+                        <ul class="sf-social">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <div class="sf-caty-box">
-                        <div class="sf-caty-icon"><i class="fa fa-bolt"></i></div>
-                        <h4>Electrician</h4>
-                        <span>85+ Providers</span>
+                    <div class="sf-footer-widget">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Pricing Plans</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <div class="sf-caty-box">
-                        <div class="sf-caty-icon"><i class="fa fa-paint-brush"></i></div>
-                        <h4>Painter</h4>
-                        <span>65+ Providers</span>
+                    <div class="sf-footer-widget">
+                        <h4>For Providers</h4>
+                        <ul>
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <div class="sf-caty-box">
-                        <div class="sf-caty-icon"><i class="fa fa-gavel"></i></div>
-                        <h4>Carpenter</h4>
-                        <span>90+ Providers</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="sf-caty-box">
-                        <div class="sf-caty-icon"><i class="fa fa-home"></i></div>
-                        <h4>Cleaner</h4>
-                        <span>150+ Providers</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="sf-caty-box">
-                        <div class="sf-caty-icon"><i class="fa fa-car"></i></div>
-                        <h4>Auto Service</h4>
-                        <span>75+ Providers</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="sf-caty-box">
-                        <div class="sf-caty-icon"><i class="fa fa-leaf"></i></div>
-                        <h4>Gardener</h4>
-                        <span>45+ Providers</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="sf-caty-box">
-                        <div class="sf-caty-icon"><i class="fa fa-truck"></i></div>
-                        <h4>Movers</h4>
-                        <span>55+ Providers</span>
+                    <div class="sf-footer-widget">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li><i class="fa fa-map-marker"></i> 123 Main Street, New York, NY</li>
+                            <li><i class="fa fa-phone"></i> +1 234 567 890</li>
+                            <li><i class="fa fa-envelope"></i> info@servicefinder.com</li>
+                            <li><i class="fa fa-clock-o"></i> Mon - Fri: 9AM - 6PM</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="sf-howit-section">
+    </div>
+    <div class="sf-footer-bottom">
         <div class="container">
-            <div class="section-head">
-                <h2>How It Works</h2>
-                <p>Simple steps to find the best service providers</p>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="sf-howit-box">
-                        <div class="sf-howit-icon">
-                            <i class="fa fa-search"></i>
-                            <span class="sf-howit-num">1</span>
-                        </div>
-                        <h4>Search</h4>
-                        <p>Search for the service you need in your area</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="sf-howit-box">
-                        <div class="sf-howit-icon">
-                            <i class="fa fa-users"></i>
-                            <span class="sf-howit-num">2</span>
-                        </div>
-                        <h4>Compare</h4>
-                        <p>Compare providers based on ratings and reviews</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="sf-howit-box">
-                        <div class="sf-howit-icon">
-                            <i class="fa fa-calendar-check-o"></i>
-                            <span class="sf-howit-num">3</span>
-                        </div>
-                        <h4>Book</h4>
-                        <p>Book the service provider that fits your needs</p>
-                    </div>
-                </div>
-            </div>
+            <p>&copy; 2026 Service Finder. All Rights Reserved.</p>
         </div>
-    </section>
-
-    <!-- Featured Providers -->
-    <section class="sf-providers-section">
-        <div class="container">
-            <div class="section-head">
-                <h2>Featured Service Providers</h2>
-                <p>Top rated professionals ready to serve you</p>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="sf-provider-box">
-                        <div class="sf-provider-media">
-                            <img src="images/pro-pic.jpg" alt="Provider">
-                            <span class="sf-featured-label">Featured</span>
-                        </div>
-                        <div class="sf-provider-info">
-                            <h4 class="sf-provider-name"><a href="listing-detail.html">John Smith</a></h4>
-                            <span class="sf-provider-category">Plumber</span>
-                            <div class="sf-provider-rating">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
-                                <span>(4.5)</span>
-                            </div>
-                            <p class="sf-provider-location"><i class="fa fa-map-marker"></i> New York, NY</p>
-                            <a href="listing-detail.html" class="btn-view-profile">View Profile</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="sf-provider-box">
-                        <div class="sf-provider-media">
-                            <img src="images/pictest.jpg" alt="Provider">
-                            <span class="sf-featured-label">Featured</span>
-                        </div>
-                        <div class="sf-provider-info">
-                            <h4 class="sf-provider-name"><a href="listing-detail.html">Sarah Johnson</a></h4>
-                            <span class="sf-provider-category">Cleaner</span>
-                            <div class="sf-provider-rating">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                <span>(5.0)</span>
-                            </div>
-                            <p class="sf-provider-location"><i class="fa fa-map-marker"></i> Los Angeles, CA</p>
-                            <a href="listing-detail.html" class="btn-view-profile">View Profile</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="sf-provider-box">
-                        <div class="sf-provider-media">
-                            <img src="images/pictest2.jpg" alt="Provider">
-                            <span class="sf-featured-label">Featured</span>
-                        </div>
-                        <div class="sf-provider-info">
-                            <h4 class="sf-provider-name"><a href="listing-detail.html">Mike Davis</a></h4>
-                            <span class="sf-provider-category">Electrician</span>
-                            <div class="sf-provider-rating">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
-                                <span>(4.0)</span>
-                            </div>
-                            <p class="sf-provider-location"><i class="fa fa-map-marker"></i> Chicago, IL</p>
-                            <a href="listing-detail.html" class="btn-view-profile">View Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top:30px;">
-                <a href="listing-grid.html" class="btn-cta primary">View All Providers</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="sf-testimonial-section">
-        <div class="container">
-            <div class="section-head">
-                <h2>What Our Customers Say</h2>
-                <p>Trusted by thousands of happy customers</p>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="sf-testimonial-item">
-                        <div class="sf-testimonial-content">
-                            <p>"Excellent service! Found a great plumber within minutes. The booking process was seamless and the provider arrived on time."</p>
-                        </div>
-                        <div class="sf-testimonial-author">
-                            <img src="images/pictest.jpg" alt="Customer">
-                            <h5>Jane Doe</h5>
-                            <span>Homeowner</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="sf-cta-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="sf-cta-box">
-                        <div class="sf-cta-icon"><i class="fa fa-search"></i></div>
-                        <div class="sf-cta-content">
-                            <h3>Are You Looking For Service?</h3>
-                            <p>Find the best professionals in your area with verified reviews and competitive pricing.</p>
-                            <a href="listing-grid.html" class="btn-cta primary">Find Service</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="sf-cta-box">
-                        <div class="sf-cta-icon"><i class="fa fa-briefcase"></i></div>
-                        <div class="sf-cta-content">
-                            <h3>Are You A Service Provider?</h3>
-                            <p>Join thousands of professionals and grow your business with our platform.</p>
-                            <a href="signup.html" class="btn-cta secondary">Register Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="sf-blog-section">
-        <div class="container">
-            <div class="section-head">
-                <h2>Latest News & Articles</h2>
-                <p>Stay updated with tips and insights</p>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="sf-blog-box">
-                        <div class="sf-blog-media"><img src="images/blog1.jpg" alt="Blog"></div>
-                        <div class="sf-blog-info">
-                            <div class="sf-blog-meta">
-                                <span><i class="fa fa-calendar"></i> Jan 15, 2026</span>
-                                <span><i class="fa fa-user"></i> Admin</span>
-                            </div>
-                            <h4 class="sf-blog-title"><a href="blog-detail.html">10 Tips for Choosing the Right Service Provider</a></h4>
-                            <p>Learn how to evaluate and choose the best service provider...</p>
-                            <a href="blog-detail.html" class="sf-blog-link">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="sf-blog-box">
-                        <div class="sf-blog-media"><img src="images/blog2.jpg" alt="Blog"></div>
-                        <div class="sf-blog-info">
-                            <div class="sf-blog-meta">
-                                <span><i class="fa fa-calendar"></i> Jan 12, 2026</span>
-                                <span><i class="fa fa-user"></i> Admin</span>
-                            </div>
-                            <h4 class="sf-blog-title"><a href="blog-detail.html">How to Grow Your Service Business Online</a></h4>
-                            <p>Essential strategies for service providers to attract customers...</p>
-                            <a href="blog-detail.html" class="sf-blog-link">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="sf-blog-box">
-                        <div class="sf-blog-media"><img src="images/blog3.jpg" alt="Blog"></div>
-                        <div class="sf-blog-info">
-                            <div class="sf-blog-meta">
-                                <span><i class="fa fa-calendar"></i> Jan 10, 2026</span>
-                                <span><i class="fa fa-user"></i> Admin</span>
-                            </div>
-                            <h4 class="sf-blog-title"><a href="blog-detail.html">The Importance of Customer Reviews</a></h4>
-                            <p>Why reviews matter and how they help customers and providers...</p>
-                            <a href="blog-detail.html" class="sf-blog-link">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="footer-widget">
-                            <div class="footer-logo"><img src="images/logo2.png" alt="Service Finder"></div>
-                            <p>Service Finder is your one-stop platform to find and book the best local service providers in your area.</p>
-                            <ul class="social-icons">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="footer-widget">
-                            <h4 class="footer-widget-title">Quick Links</h4>
-                            <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="listing-grid.html">Our Services</a></li>
-                                <li><a href="pricing.html">Pricing Plans</a></li>
-                                <li><a href="blog-grid.html">Blog</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="footer-widget">
-                            <h4 class="footer-widget-title">For Providers</h4>
-                            <ul>
-                                <li><a href="signup.html">Register</a></li>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="#">Terms of Service</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="footer-widget">
-                            <h4 class="footer-widget-title">Contact Info</h4>
-                            <ul>
-                                <li><i class="fa fa-map-marker"></i> 123 Main Street, New York, NY 10001</li>
-                                <li><i class="fa fa-phone"></i> +1 234 567 890</li>
-                                <li><i class="fa fa-envelope"></i> info@servicefinder.com</li>
-                                <li><i class="fa fa-clock-o"></i> Mon - Fri: 9:00 AM - 6:00 PM</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p>&copy; 2026 Service Finder. All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</div>
+    </div>
+</footer>
 
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
